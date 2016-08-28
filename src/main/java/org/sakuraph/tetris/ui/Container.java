@@ -1,4 +1,4 @@
-package org.sakuraph.tetris.view;
+package org.sakuraph.tetris.ui;
 
 import org.sakuraph.tetris.bean.ContainerProperty;
 import org.sakuraph.tetris.util.PropertyLoader;
@@ -10,7 +10,7 @@ import java.awt.*;
  * @author sakuraph@sina.cn
  */
 public class Container extends JFrame {
-    public Container() {
+    public Container(GraphicPanel panel) {
         //获取容器配置
         ContainerProperty property = PropertyLoader.getContainerProperty();
         //设置标题
@@ -26,5 +26,9 @@ public class Container extends JFrame {
         int x = screen.width - this.getWidth() >> 1;
         int y = (screen.height - this.getHeight() >> 1) - property.getWindowTop();
         this.setLocation(x, y);
+        //设置图层
+        this.setContentPane(panel);
+        //所有配置完毕才设置可见 避免显示不正常
+        this.setVisible(true);
     }
 }

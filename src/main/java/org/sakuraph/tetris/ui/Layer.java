@@ -1,5 +1,6 @@
-package org.sakuraph.tetris.bean;
+package org.sakuraph.tetris.ui;
 
+import org.sakuraph.tetris.dto.GraphicDataTransferObject;
 import org.sakuraph.tetris.util.PropertyLoader;
 import org.sakuraph.tetris.util.StringUtils;
 
@@ -19,6 +20,7 @@ public abstract class Layer {
     protected int padding = PropertyLoader.getContainerProperty().getPadding();
     protected String url;
     protected ClassLoader loader = this.getClass().getClassLoader();
+    protected GraphicDataTransferObject gdto;
 
     public Layer(int x, int y, int w, int h, String url) {
         this.x = x;
@@ -38,4 +40,8 @@ public abstract class Layer {
     }
 
     protected abstract void paint(Graphics g, Image image);
+
+    public void setGdto(GraphicDataTransferObject gdto) {
+        this.gdto = gdto;
+    }
 }

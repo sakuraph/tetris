@@ -1,5 +1,7 @@
 package org.sakuraph.tetris.bean;
 
+import org.sakuraph.tetris.bean.LayerProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 

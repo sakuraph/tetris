@@ -1,4 +1,4 @@
-package org.sakuraph.tetris.bean;
+package org.sakuraph.tetris.ui;
 
 import java.awt.*;
 
