@@ -7,8 +7,8 @@ import java.awt.*;
  */
 public class GraphicLayer extends Layer {
 
-    public GraphicLayer(int x, int y, int width, int height, int size, int padding, String url) {
-        super(x, y, width, height, size, padding, url);
+    public GraphicLayer(int x, int y, int width, int height, String url) {
+        super(x, y, width, height, url);
     }
 
     @Override

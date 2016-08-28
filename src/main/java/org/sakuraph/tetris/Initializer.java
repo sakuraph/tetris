@@ -9,7 +9,8 @@ import org.sakuraph.tetris.view.Container;
 public class Initializer {
     public static void main(String[] args) {
         Container container = new Container();
-        container.setContentPane(new GraphicPanel());
+        GraphicPanel graphicPanel = new GraphicPanel();
+        container.setContentPane(graphicPanel);
         container.setVisible(true);
     }
 }

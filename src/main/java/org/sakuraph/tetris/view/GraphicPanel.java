@@ -1,11 +1,13 @@
 package org.sakuraph.tetris.view;
 
-import org.sakuraph.tetris.bean.BackgroundLayer;
-import org.sakuraph.tetris.bean.BorderLayer;
-import org.sakuraph.tetris.bean.GraphicLayer;
+import org.sakuraph.tetris.bean.*;
+import org.sakuraph.tetris.util.PropertyLoader;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 /**
  * @author sakuraph@sina.cn
@@ -15,12 +17,20 @@ public class GraphicPanel extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        new BackgroundLayer(0, 0, 1200, 700, 0, 0, "graphics/background.jpg").render(g);
-        new BorderLayer(40, 32, 334, 279, 7, 0, "graphics/border.png").render(g);
-        new GraphicLayer(40, 32, 0, 0, 0, 32, "graphics/string/db.png").render(g);
-        new GraphicLayer(40, 32, 0, 0, 0, 32, "graphics/string/db.png").render(g);
-        new GraphicLayer(40, 32, 0, 0, 0, 32, "graphics/string/db.png").render(g);
-        new GraphicLayer(40, 32, 0, 0, 0, 32, "graphics/string/db.png").render(g);
+        super.paintComponent(g);
+        ContainerProperty property = PropertyLoader.getContainerProperty();
+        List<LayerProperty> layerProperties = property.getLayerProperties();
+        for (LayerProperty layerProperty : layerProperties) {
+            try {
+                Class<?> clz = Class.forName(layerProperty.getClz());
+                Constructor<?> constructor = clz.getConstructor(int.class, int.class, int.class, int.class, String.class);
+                Layer layer = (Layer) constructor.newInstance(layerProperty.getX(), layerProperty.getY(), layerProperty.getW(), layerProperty.getH(), layerProperty.getUrl());
+                layer.render(g);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        this.requestFocus();
     }
 
 

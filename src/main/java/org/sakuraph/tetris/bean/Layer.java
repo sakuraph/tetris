@@ -1,5 +1,6 @@
 package org.sakuraph.tetris.bean;
 
+import org.sakuraph.tetris.util.PropertyLoader;
 import org.sakuraph.tetris.util.StringUtils;
 
 import javax.swing.*;
@@ -12,20 +13,18 @@ import java.net.URL;
 public abstract class Layer {
     protected int x;
     protected int y;
-    protected int width;
-    protected int height;
-    protected int size;
-    protected int padding;
+    protected int w;
+    protected int h;
+    protected int border = PropertyLoader.getContainerProperty().getBorder();
+    protected int padding = PropertyLoader.getContainerProperty().getPadding();
     protected String url;
     protected ClassLoader loader = this.getClass().getClassLoader();
 
-    public Layer(int x, int y, int width, int height, int size, int padding, String url) {
+    public Layer(int x, int y, int w, int h, String url) {
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
-        this.size = size;
-        this.padding = padding;
+        this.w = w;
+        this.h = h;
         this.url = url;
     }
 

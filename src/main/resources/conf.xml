@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tetris>
-    <container width="1168" height="680" padding="16" border="7">
+    <container title="俄罗斯方块" width="1168" height="680" padding="16" border="7" windowTop="32">
         <layer class="org.sakuraph.tetris.bean.BackgroundLayer" x="0" y="0" w="1168" h="680"
-               path="graphics/background.jpg"/>
-        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="40" y="32" w="334" h="279" path="graphics/border.png"/>
-        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="40" y="343" w="343" h="279" path="graphics/border.png"/>
-        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="414" y="32" w="334" h="279" path="graphics/border.png"/>
-        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="788" y="32" w="334" h="124" path="graphics/border.png"/>
-        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="788" y="188" w="176" h="148" path="graphics/border.png"/>
-        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="964" y="188" w="158" h="148" path="graphics/border.png"/>
-        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="788" y="368" w="334" h="200" path="graphics/border.png"/>
+               url="graphics/background.jpg"/>
+        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="40" y="32" w="334" h="279" url="graphics/border.png"/>
+        <layer class="org.sakuraph.tetris.bean.GraphicLayer" x="40" y="32" w="0" h="0"
+               url="graphics/db.png"/>
+        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="40" y="343" w="334" h="279" url="graphics/border.png"/>
+        <layer class="org.sakuraph.tetris.bean.GraphicLayer" x="40" y="343" w="0" h="0"
+               url="graphics/disk.png"/>
+        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="414" y="32" w="334" h="590" url="graphics/border.png"/>
+        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="788" y="32" w="334" h="124" url="graphics/border.png"/>
+        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="788" y="188" w="176" h="148"
+               url="graphics/border.png"/>
+        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="964" y="188" w="158" h="148"
+               url="graphics/border.png"/>
+        <layer class="org.sakuraph.tetris.bean.BorderLayer" x="788" y="368" w="334" h="200"
+               url="graphics/border.png"/>
+
     </container>
+    <data>
+
+    </data>
+    <system>
+
+    </system>
 </tetris>

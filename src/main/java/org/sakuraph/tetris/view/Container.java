@@ -1,5 +1,8 @@
 package org.sakuraph.tetris.view;
 
+import org.sakuraph.tetris.bean.ContainerProperty;
+import org.sakuraph.tetris.util.PropertyLoader;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,18 +11,20 @@ import java.awt.*;
  */
 public class Container extends JFrame {
     public Container() {
+        //获取容器配置
+        ContainerProperty property = PropertyLoader.getContainerProperty();
         //设置标题
-        this.setTitle("Tetris");
+        this.setTitle(property.getTitle());
         //设置点击退出关闭游戏
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         // 设置主容器窗口大小
-        this.setSize(1200, 700);
+        this.setSize(property.getWidth(), property.getHeight());
         //设置不允许用户改变窗口大小
         this.setResizable(false);
         ///设置主容器居中
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (screen.width - this.getWidth()) / 2;
-        int y = (screen.height - this.getHeight()) / 2 - 32;
+        int x = screen.width - this.getWidth() >> 1;
+        int y = (screen.height - this.getHeight() >> 1) - property.getWindowTop();
         this.setLocation(x, y);
     }
 }

@@ -7,12 +7,13 @@ import java.awt.*;
  */
 public class BackgroundLayer extends Layer {
 
-    public BackgroundLayer(int x, int y, int width, int height, int size, int padding, String url) {
-        super(x, y, width, height, size, padding, url);
+
+    public BackgroundLayer(int x, int y, int width, int height, String url) {
+        super(x, y, width, height, url);
     }
 
     @Override
     protected void paint(Graphics g, Image image) {
-        g.drawImage(image, 0, 0, width, height, null);
+        g.drawImage(image, x, y, w, h, null);
     }
 }
