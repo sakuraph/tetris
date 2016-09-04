@@ -1,5 +1,6 @@
 package org.sakuraph.tetris.ui;
 
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -7,13 +8,14 @@ import java.awt.*;
  */
 public class BackgroundLayer extends Layer {
 
+    private static final Image BACKGROUND_IMAGE = new ImageIcon("graphics/background/light.jpg").getImage();
 
-    public BackgroundLayer(int x, int y, int width, int height, String url) {
-        super(x, y, width, height, url);
+    public BackgroundLayer(int x, int y, int w, int h) {
+        super(x, y, w, h);
     }
 
     @Override
-    protected void paint(Graphics g, Image image) {
-        g.drawImage(image, x, y, w, h, null);
+    protected void paintLayer(Graphics g) {
+        g.drawImage(BACKGROUND_IMAGE, x, y, w, h, null);
     }
 }

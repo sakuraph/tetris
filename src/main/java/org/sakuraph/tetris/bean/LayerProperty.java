@@ -9,7 +9,6 @@ public class LayerProperty {
     private int w;
     private int h;
     private String clz;
-    private String url;
 
     public int getX() {
         return x;
@@ -51,12 +50,4 @@ public class LayerProperty {
         this.clz = clz;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-    
 }

@@ -21,14 +21,17 @@ public class GraphicController {
     }
 
     public void keyDown() {
-
+        handler.keyDown();
+        panel.repaint();
     }
 
     public void keyLeft() {
-
+        handler.keyLeft();
+        panel.repaint();
     }
 
     public void keyRight() {
-
+        handler.keyRight();
+        panel.repaint();
     }
 }

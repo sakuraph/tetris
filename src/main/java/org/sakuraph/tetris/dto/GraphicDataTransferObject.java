@@ -15,6 +15,14 @@ public class GraphicDataTransferObject {
     private int point;
     private int line;
 
+    public GraphicDataTransferObject() {
+        init();
+    }
+
+    public void init() {
+        gameMap=new boolean[10][18];
+    }
+
     public List<Player> getDbPlayers() {
         return dbPlayers;
     }

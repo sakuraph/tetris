@@ -14,7 +14,7 @@ import java.util.Iterator;
  * @author sakuraph@sina.cn
  */
 public abstract class PropertyLoader {
-    private static ContainerProperty containerProperty = new ContainerProperty();
+    private static final ContainerProperty containerProperty = new ContainerProperty();
 
     static {
         SAXReader reader = new SAXReader();
@@ -49,7 +49,6 @@ public abstract class PropertyLoader {
             layerProperty.setH(Integer.parseInt(layer.attributeValue("h")));
             layerProperty.setX(Integer.parseInt(layer.attributeValue("x")));
             layerProperty.setY(Integer.parseInt(layer.attributeValue("y")));
-            layerProperty.setUrl(layer.attributeValue("url"));
             containerProperty.getLayerProperties().add(layerProperty);
         }
     }

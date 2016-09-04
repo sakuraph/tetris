@@ -27,10 +27,10 @@ public class GraphicPanel extends JPanel {
         for (LayerProperty layerProperty : layerProperties) {
             try {
                 Class<?> clz = Class.forName(layerProperty.getClz());
-                Constructor<?> constructor = clz.getConstructor(int.class, int.class, int.class, int.class, String.class);
-                Layer layer = (Layer) constructor.newInstance(layerProperty.getX(), layerProperty.getY(), layerProperty.getW(), layerProperty.getH(), layerProperty.getUrl());
+                Constructor<?> constructor = clz.getConstructor(int.class, int.class, int.class, int.class);
+                Layer layer = (Layer) constructor.newInstance(layerProperty.getX(), layerProperty.getY(), layerProperty.getW(), layerProperty.getH());
                 layer.setGdto(gdto);
-                layer.render(g);
+                layer.paintLayer(g);
             } catch (Exception e) {
                 e.printStackTrace();
             }
